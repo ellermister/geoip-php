@@ -26,7 +26,7 @@ if (isset($_GET['ip'])) {
     $cityRecord = $cityReader->city($ip);
     $asnRecord = $asnReader->asn($ip);
 
-    $asn = isset($cityRecord->autonomousSystemNumber) ? 'AS' . $cityRecord->autonomousSystemNumber : '';//    AS4134
+    $asn = isset($asnRecord->autonomousSystemNumber) ? 'AS' . $asnRecord->autonomousSystemNumber : '';//    AS4134
 
     $country = isset($cityRecord->country->names) ? $cityRecord->country->names['zh-CN'] : '';
     $region = isset($cityRecord->mostSpecificSubdivision->names) ? $cityRecord->mostSpecificSubdivision->names['zh-CN'] : '';
